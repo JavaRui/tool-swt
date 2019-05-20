@@ -1,4 +1,4 @@
-packagecom.${groupId}.${artifactId}.provider;
+package com.${groupId}.${artifactId}.provider;
 
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;

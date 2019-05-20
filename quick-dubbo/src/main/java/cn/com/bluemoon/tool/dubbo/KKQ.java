@@ -13,7 +13,7 @@ public class KKQ {
 	
 	public static void main(String[] args) {
 		
-		String path = "d:\\src";
+		String path = "D:\\code_space\\eclipse_space\\com.yt.utils";
 		List<File> showFile = YtFileUtils.showFile(new ArrayList<File>(), path);
 		xxx.show(showFile);
 		showFile.forEach((file)->{

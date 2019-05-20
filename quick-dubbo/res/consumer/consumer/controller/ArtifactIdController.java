@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ${ArtifactId}Controller {
 
-    @Reference(version = "${demo.service.version}")
+    @Reference()
     private DemoService demoService;
 
     @RequestMapping("/sayHello/{name}")
     public String sayHello(@PathVariable("name") String name) {
-       s
+       
         System.out.println("name---->"+name);
         return demoService.sayHello(name);
     }

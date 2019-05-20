@@ -136,7 +136,7 @@ public class ProAndConComposite extends YtComposite{
 		javaFolder.mkdirs();
 		YtFileUtils.copyDirectiory(res+proCon+File.separatorChar, javaFolder.getAbsolutePath());
 		
-		List<File> showFile = YtFileUtils.showFile(new ArrayList<File>(), javaFolder);
+		List<File> showFile = YtFileUtils.showFile(new ArrayList<File>(), javaFolder.getAbsolutePath());
 		showFile.forEach(file->{
 			String newFileName = file.getAbsolutePath().replaceAll("ArtifactId", YtFileUtils.upFirstName(replaceKey.artifactId));
 			System.out.println("------  "+newFileName);
@@ -159,7 +159,8 @@ public class ProAndConComposite extends YtComposite{
 		}
 		
 		String fileContent = ReadTxt.getContentAsString(javaFile.getAbsolutePath());
-		fileContent = fileContent.replaceAll("\\$\\{groupId\\}", "com."+replaceKey.groupId);
+		fileContent = fileContent.replaceAll("\\$\\{groupId\\}", ""+replaceKey.groupId);
+		fileContent = fileContent.replaceAll("\\$\\{com\\.groupId\\}", "com."+replaceKey.groupId);
 		fileContent = fileContent.replaceAll("\\$\\{artifactId\\}", replaceKey.artifactId);
 		fileContent = fileContent.replaceAll("\\$\\{name\\}", replaceKey.name);
 		fileContent = fileContent.replaceAll("\\$\\{artifactId_parent\\}", replaceKey.artifactId);
